@@ -22,3 +22,6 @@ This repository marks the beginning of my journey in software development and Da
 
 Stay tuned as I continue adding projects and improving my skills!
 
+## Day 2
+
+Learning Git and GitHub with VS Code.
