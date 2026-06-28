@@ -21,3 +21,6 @@ This repository marks the beginning of my journey in software development and Da
 - Artificial Intelligence
 
 Stay tuned as I continue adding projects and improving my skills!
+
+## Day 1
+Today I successfully installed Git, connected GitHub, and learned the basic Git workflow.
