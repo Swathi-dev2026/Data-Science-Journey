@@ -34,4 +34,8 @@ Completed operators in python.
 
 Completed input and output in python.
 
+## Day 4
+
+Completed Mini Project 1: Personal Profile Card
+
 
