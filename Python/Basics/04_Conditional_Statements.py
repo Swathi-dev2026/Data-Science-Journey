@@ -39,7 +39,7 @@ if password == "python123":
 else:
     print("Access Denied")
 
-if age >= 18 and password == "python123":
+if age >= 18 and password == "python012":
     print(f"Hello, {name}!" + "You are eligible to vote.")
 else:
     print(f"Sorry, {name}!" +"You are not eligible to vote.")
