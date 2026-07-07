@@ -83,3 +83,40 @@
 - Generate a random secret number instead of using a fixed value.
 - Give hints such as "Too High" or "Too Low".
 - Allow the user to play multiple rounds.
+
+==================================================================================================================================================================================================
+
+# LEARNINGS
+
+## Mini Project 5 - Student Result System
+
+### Concepts I Used
+- Functions
+- Parameters
+- Return Values
+- Variables
+- User Input
+- if-elif-else
+- while Loop
+- Input Validation
+- Function Calls
+
+### What I Learned
+- How to organize a program using functions.
+- The difference between defining a function and calling a function.
+- How to return values from functions.
+- How to pass values as arguments to another function.
+- How to use a while loop to repeat an entire program.
+- How to convert user input to lowercase using .lower().
+
+### Challenges I Faced
+- Understanding where to place the while loop.
+- Learning the difference between function definition and function calls.
+- Understanding how return values move between functions.
+
+### Improvements for the Future
+- Validate marks using a while loop.
+- Store multiple students in a list.
+- Save student results to a file.
+- Calculate class average.
+- Display the highest and lowest marks.
