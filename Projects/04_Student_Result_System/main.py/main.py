@@ -3,12 +3,14 @@
 def get_student_details(): 
     name = input("Enter your name: ")
     roll_num = input("Enter your roll number: ")
-    marks = int(input("Enter your marks: "))
+
+    while True:
+        marks = int(input("Enter your marks: "))
+
+        if 0 <= marks <= 100:
+            break
+        print("Invalid Marks! Please enter marks between 0 and 100.")
     return name, roll_num, marks
-name, roll_num, marks = get_student_details()
-if marks < 0 or marks > 100:
-    print ("Invalid Marks")
-    
 
     
 def calculate_grade(marks):
@@ -22,7 +24,6 @@ def calculate_grade(marks):
         return "D"
     else:
         return "F"
-grade = calculate_grade(marks)
                                    
 
 def calculate_result(marks):
@@ -30,7 +31,6 @@ def calculate_result(marks):
         return "PASS"
     else:
         return "FAIL"
-result = calculate_result(marks)
 
 
 def motivational_message(marks):
@@ -44,7 +44,6 @@ def motivational_message(marks):
         return "Keep Practicing!"
     else:
         return "Better Luck Next Time!"
-message = motivational_message(marks)
 
 
 def display_report(name, roll_num, marks, grade, result, message):
@@ -62,9 +61,8 @@ def display_report(name, roll_num, marks, grade, result, message):
 
     print("==============================================")
 
-display_report(name, roll_num, marks, grade, result, message)
 
-choice = "No"
+choice = "yes"
 
 while choice == "yes":
 
