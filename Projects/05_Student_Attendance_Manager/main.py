@@ -19,4 +19,41 @@ def view_students(students):
             print(student)
 view_students(students)
 
-    
+def remove_student(students):
+    student_name = input("Enter student name to remove: ")
+    if student_name in students:
+        students.remove(student_name)
+        print("Student remove successfully")
+    else:
+        print("Student not found")
+remove_student(students)
+view_students(students)
+
+def search_student(students):
+    student_name = input("Enter student name to search: ")
+    if student_name in students:
+        print("Student found.")
+    else:
+        print("Student not found")
+search_student(students)
+view_students(students)
+
+def count_student(students):
+    print(f"Total Student: {len(students)}")
+count_student(students)
+
+choice = 0
+while choice != 6:
+     print("================================")
+     print("STUDENT ATTENDANCE MANAGER")
+     print("================================")
+     print("1. Add Student")
+     print("2. View Students")
+     print("3. Remove Student")
+     print("4. Search Student")
+     print("5. Count Students")
+     print("6. Exit")
+
+     choice = int(input("Enter your choice: "))
+     if choice == 1:
+         display_attentence()
