@@ -56,4 +56,17 @@ while choice != 6:
 
      choice = int(input("Enter your choice: "))
      if choice == 1:
-         display_attentence()
+         add_student(students)
+     elif choice == 2:
+         view_students(students)
+     elif choice == 3:
+         remove_student(students)
+     elif choice == 4:
+         search_student(students)
+     elif choice == 5:
+         count_student(students)
+     elif choice == 6:
+         print("Thank you for using Student Attendance Manager!")
+     else:
+         print("Invalid choices. Please try again.")
+    
