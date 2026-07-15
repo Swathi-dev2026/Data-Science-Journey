@@ -45,7 +45,7 @@ def count_student(students):
 choice = 0
 while choice != 6:
      print("================================")
-     print("STUDENT ATTENDANCE MANAGER")
+     print("   STUDENT ATTENDANCE MANAGER   ")
      print("================================")
      print("1. Add Student")
      print("2. View Students")
