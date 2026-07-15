@@ -4,10 +4,10 @@ def add_student(students):
     student_name = input("Enter student Name: ")
     students.append(student_name)
     print("Student added scccessfully!")
-add_student(students)
-add_student(students)
-add_student(students)
-print(students)
+#add_student(students)
+#add_student(students)
+#add_student(students)
+#print(students)
 
 def view_students(students):
     if len(students) == 0:
@@ -17,7 +17,7 @@ def view_students(students):
 
         for student in students:
             print(student)
-view_students(students)
+#view_students(students)
 
 def remove_student(students):
     student_name = input("Enter student name to remove: ")
@@ -26,8 +26,8 @@ def remove_student(students):
         print("Student remove successfully")
     else:
         print("Student not found")
-remove_student(students)
-view_students(students)
+#remove_student(students)
+#view_students(students)
 
 def search_student(students):
     student_name = input("Enter student name to search: ")
@@ -35,12 +35,12 @@ def search_student(students):
         print("Student found.")
     else:
         print("Student not found")
-search_student(students)
-view_students(students)
+#search_student(students)
+#view_students(students)
 
 def count_student(students):
     print(f"Total Student: {len(students)}")
-count_student(students)
+#count_student(students)
 
 choice = 0
 while choice != 6:
