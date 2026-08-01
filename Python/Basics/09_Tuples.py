@@ -85,3 +85,20 @@ colors_list.remove("blue")                                 #remove
 colors = tuple(colors_list)
 
 print(colors)
+print("="*50)
+
+# challenge 5
+
+nums=(10,20,30,40,50)   
+
+for num in nums:
+    if num > 25:
+        print(num)
+print("="*50)
+
+
+subjects = ("Python", "SQL", "Pandas", "NumPy", "Machine Learning")
+
+for subject in subjects:
+    if subject == "Pandas" or subject == "NumPy":
+        print(f"I am learning {subject}")
