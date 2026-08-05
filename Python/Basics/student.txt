@@ -1,0 +1,4 @@
+Name: Swathi
+Course: Applied data science
+College: SRM University
+City: Chennai
