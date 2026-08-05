@@ -43,3 +43,23 @@ except ZeroDivisionError:
 
 else:
     print(f"Result: {result}")
+print("="*50)
+
+
+#finally block
+
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+
+except ValueError:
+    print("Please enter a valid number.")
+
+except ZeroDivisionError:
+    print("You cannot divide by zero.")
+
+else:
+    print(f"Result: {result}")
+
+finally:
+    print("Execution completed.")
