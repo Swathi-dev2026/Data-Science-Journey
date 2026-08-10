@@ -1,5 +1,5 @@
 
-### Inheritance
+### step 1:  Inheritance
 
 class Person:
 
@@ -10,8 +10,15 @@ class Person:
         print(f"Hello, my name is {self.name}")
 
 class Student(Person):
-    pass
 
-student1 = Student("Swathi")
+    def __init__(self, name, course):         ### step 2: Adding student_specific data
+        super().__init__(name)
+        self.course = course
+
+    def display_course(self):
+        print(f"I am Studying {self.course}")
+
+student1 = Student("Swathi" , "Data Science")
 
 student1.introduce()
+student1.display_course()
