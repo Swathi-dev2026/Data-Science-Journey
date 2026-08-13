@@ -46,3 +46,13 @@ student1.introduce()
 
 class Student:
 
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age
+
+    def display_age(self):
+        print(f"Age: {self.__age}")
+
+student1 = Student("Swathi", 22)
+
+student1.display_age
