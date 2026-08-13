@@ -41,3 +41,8 @@ student1 = Student()
 
 person1.introduce()
 student1.introduce()
+
+### Encapsulation
+
+class Student:
+
