@@ -41,6 +41,7 @@ student1 = Student()
 
 person1.introduce()
 student1.introduce()
+print("="*50)
 
 ### Encapsulation
 
@@ -55,4 +56,24 @@ class Student:
 
 student1 = Student("Swathi", 22)
 
-student1.display_age
+student1.display_age()
+print("="*50)
+
+### polymorphism
+
+class Dog:
+
+    def sound(self):
+        print("Dog barks")
+
+class Cat:
+
+    def sound(self):
+        print("Cat meows")
+
+dog = Dog()
+cat = Cat()
+
+dog.sound()
+cat.sound()
+print("="*50)
