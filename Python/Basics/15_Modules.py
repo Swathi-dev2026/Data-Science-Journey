@@ -1,15 +1,15 @@
 
-import calculator
+import my_package.calculator
 
-result1 = calculator.add(10, 5)
-result2 = calculator.subtract(10, 5)
+result1 = my_package.calculator.add(10, 5)
+result2 = my_package.calculator.subtract(10, 5)
 
 print(result1)
 print(result2)
 print("="*50)
 
 ### from.....import.....
-from calculator import add, subtract
+from my_package.calculator import add, subtract
 
 print(add(20, 10))
 print(subtract(20, 10))
@@ -40,3 +40,21 @@ selected_fruits = random.choice(fruits)   # random item
 
 print(selected_fruits)
 print("="*50)
+
+### after creaiting a package, we can import the modules from the package and use them in our code. 
+
+from my_package.greetings import greet
+
+greet("Swathi")
+print("="*50)
+
+from my_package.calculator import add, subtract, multiply
+from my_package.greetings import greet, welcome
+
+print("Addition: ", add(10, 5))
+print("Subtraction: ", subtract(10, 5))
+print("Multiplication: ", multiply(10, 5))
+
+greet("Swathi")
+welcome("Swathi")
+
