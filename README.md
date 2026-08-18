@@ -1,41 +1,73 @@
-# Data Science Journey
 
-Welcome to my first GitHub repository! 🚀
+# Data Science Journey 🚀
 
-## About
-This repository marks the beginning of my journey in software development and Data Science.
+Welcome to my GitHub repository!
 
-## Goals
-- Learn Git and GitHub
-- Master Visual Studio Code
-- Build Data Science and AI projects
-- Create a professional portfolio for recruiters
+This repository documents my journey of learning **Python, Data Science, and software development**, with hands-on practice, mini projects, and progressively more advanced concepts.
 
-## Skills I'll Learn
-- Git
-- GitHub
-- Python
-- SQL
-- Machine Learning
-- Data Science
-- Artificial Intelligence
+## 🎯 Goals
 
-Stay tuned as I continue adding projects and improving my skills!
+* Build strong Python programming fundamentals
+* Learn SQL and Data Science tools
+* Develop Machine Learning and AI skills
+* Build practical projects
+* Prepare for a career in Data Science / IT
+* Create a professional GitHub portfolio
 
-## Day 1
+## 🛠️ Skills & Technologies
 
-Learning Git and GitHub with VS Code. And completed variables and data types in python.
+### Currently Learning
 
-## Day 2
+* Python
+* Git & GitHub
+* Visual Studio Code
+* SQL
+* NumPy
+* Pandas
 
-Completed operators in python.
+### Upcoming
 
-## Day 3
+* Data Analysis
+* Statistics
+* Machine Learning
+* Data Visualization
+* Artificial Intelligence
 
-Completed input and output in python.
+## 📚 Python Learning Progress
 
-## Day 4
+### Python Basics
 
-Completed Mini Project 1: Personal Profile Card
+* Variables & Data Types ✅
+* Operators ✅
+* Input & Output ✅
+* Conditional Statements ✅
+* Loops ✅
+* Functions ✅
+* Lists, Tuples, Dictionaries & Sets ✅
+* Exception Handling ✅
+* File Handling ✅
+* Object-Oriented Programming — Part 1 & 2 ✅
+* Modules & Packages ✅
+
+### Practice & Projects
+
+* Personal Profile Card
+* Student Grade Calculator
+* Number Guessing Game
+* Student Result System
+* Student Attendance Manager
+* Student Profile Manager
+* OOP Student Manager
+
+## 📈 Journey Progress
+
+This repository will continue to grow as I learn new technologies, solve problems, and build projects.
+
+My focus is on **learning by building** and gradually developing a strong portfolio for future opportunities in Data Science and IT.
+
+---
+
+⭐ Thanks for visiting my Data Science Journey!
+
 
 
