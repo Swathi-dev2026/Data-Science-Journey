@@ -24,3 +24,6 @@ print("="*70)
 marks = np.array([45, 55, 65, 75, 85, 95])
 
 print(marks[(marks < 60) | (marks > 80)])
+print("="*70)
+
+
