@@ -30,3 +30,4 @@ bonus =10
 print(marks + bonus) 
 
 print(marks * 2)  # multiply each element by 2
+print("="*70)
