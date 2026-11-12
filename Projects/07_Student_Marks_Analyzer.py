@@ -9,8 +9,17 @@ marks = np.array([
     [82, 79, 85]
 ])
 
+student_names = np.array([
+    "Student 1",
+    "Student 2",
+    "Student 3",
+    "Student 4",
+    "Student 5"
+])
+
 print("Marks:")
 print(marks)
+print(student_names)
 
 print("Shape:", marks.shape)
 print("Total elements:", marks.size)
