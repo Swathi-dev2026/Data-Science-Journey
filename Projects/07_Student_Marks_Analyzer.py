@@ -28,7 +28,6 @@ student_totals = marks.sum(axis = 1)
 print("Student totals:", student_totals)
 
 highest_index = student_totals.argmax()
-
 print("Highest total index:", highest_index)
 
 student_averages = marks.mean(axis=1)
@@ -64,3 +63,16 @@ pass_count = np.sum(pass_mask)
 fail_count = len(student_averages) - pass_count
 print("Students passed:", pass_count)
 print("Students failed:", fail_count)
+
+print("\nStudent Performance:")
+
+for i in range(len(student_names)):
+    result = "PASS" if student_averages[i] >= 60 else "FAIL"
+
+    print(
+        student_names[i],
+        "| Total:", student_totals[i],
+        "| Average:", round(student_averages[i], 2),
+        "| Result:", result
+    )
+   
