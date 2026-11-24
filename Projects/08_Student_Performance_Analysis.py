@@ -3,6 +3,12 @@ import numpy as np
 import csv
 import os
 
+# CSV file location
+csv_file = os.path.join(
+    os.path.dirname(__file__),
+    "student_records_v2.csv"
+)
+
 # 1. Define subjects
 subject_names = np.array(["Maths", "Science", "English"])
 
@@ -20,14 +26,45 @@ while True:
         print("Please enter a valid number.")
 
 # 3. Create empty lists
+
+student_ids = []
+existing_student_ids = []
+
 student_names = []
 marks_data = []
 
+# Load previously saved Student IDs
+
+if os.path.exists(csv_file):
+
+    with open(csv_file, "r", newline="") as file:
+
+        reader = csv.reader(file)
+        next(reader)
+
+        for row in reader:
+            existing_student_ids.append(row[0])
 # 4. Collect student information
 for i in range(num_students):
 
     print(f"\nStudent {i + 1}")
 
+    # Collect unique student ID
+    while True:
+
+        student_id = input("Enter student ID: ").strip()
+
+        if student_id == "":
+            print("Student ID cannot be empty.")
+
+        elif student_id in student_ids or student_id in existing_student_ids:
+            print("This Student ID already exists. Enter another ID.")
+
+        else:
+            student_ids.append(student_id)
+            break
+
+    # Collect student name
     name = input("Enter student name: ").strip()
     student_names.append(name)
 
@@ -74,7 +111,8 @@ for i in range(len(student_names)):
     result = "PASS" if student_averages[i] >= 60 else "FAIL"
 
     print(
-        student_names[i],
+        student_ids[i],
+        "|", student_names[i],
         "| Total:", student_totals[i],
         "| Average:", round(student_averages[i], 2),
         "| Result:", result
@@ -82,9 +120,9 @@ for i in range(len(student_names)):
 
 # 8. Find topper
 
-topper_index = student_totals.argmax()
+topper_index = np.argmax(student_totals)
 
-print("\nTopper:", student_names[topper_index])
+print("\nTopper:", student_ids[topper_index], "|", student_names[topper_index])
 print("Highest Total:", student_totals[topper_index])
 
 # 9. Class statistics
@@ -106,7 +144,8 @@ for position in range(len(ranking)):
 
     print(
         position + 1,
-        student_names[index],
+        student_ids[index],
+        "|", student_names[index],
         "| Total:", student_totals[index]
     )
 
@@ -135,10 +174,11 @@ for i in range(len(student_names)):
     grades.append(grade)
 
     print(
-        student_names[i],
-        "| Average:", round(average, 2),
-        "| Grade:", grade
-    )
+    student_ids[i],
+    "|", student_names[i],
+    "| Average:", round(student_averages[i], 2),
+    "| Grade:", grades[i]
+)
 
 grades = np.array(grades)
 
@@ -190,18 +230,18 @@ print("Students Failed:", fail_count)
 print("Pass Percentage:", round(pass_percentage, 2), "%")
 print("Fail Percentage:", round(fail_percentage, 2), "%")
 
-# 15. Save Student Records to CSV
+# 15. Save student records to CSV
 
-file_exists = os.path.exists("student_records.csv")
 
-with open("student_records.csv", "a", newline="") as file:
+file_exists = os.path.exists(csv_file)
+
+with open(csv_file, "a", newline="") as file:
 
     writer = csv.writer(file)
 
-    # Write headings only if the file is new
     if not file_exists:
-
         writer.writerow([
+            "Student ID",
             "Student Name",
             "Maths",
             "Science",
@@ -211,10 +251,10 @@ with open("student_records.csv", "a", newline="") as file:
             "Grade"
         ])
 
-    # Write student records
     for i in range(len(student_names)):
 
         writer.writerow([
+            student_ids[i],
             student_names[i],
             marks[i][0],
             marks[i][1],
@@ -230,33 +270,33 @@ print("\nStudent records saved successfully!")
 
 print("\n========== STUDENT NAMES ==========")
 
-with open("student_records.csv", "r", newline="") as file:
+with open(csv_file, "r", newline="") as file:
 
     reader = csv.reader(file)
 
     next(reader)  # Skip column headings
 
     for row in reader:
-        print(row[0])
+        print(row[1])  # Student names are in the 2nd column (index 1)
 
 # 17. Display Science Marks
 
 print("\n========== SCIENCE MARKS ==========")
 
-with open("student_records.csv", "r", newline="") as file:
+with open(csv_file, "r", newline="") as file:
 
     reader = csv.reader(file)
 
     next(reader)  # Skip headings
 
     for row in reader:
-        print(row[0], "| Science:", row[2])
+        print(row[1], "| Science:", row[3])
 
 # 18. Calculate Average Science Marks from CSV
 
 science_marks = []
 
-with open("student_records.csv", "r", newline="") as file:
+with open(csv_file, "r", newline="") as file:
 
     reader = csv.reader(file)
 
@@ -264,7 +304,7 @@ with open("student_records.csv", "r", newline="") as file:
 
     for row in reader:
 
-        science_score = int(row[2])
+        science_score = int(row[3])  # Science marks are in the 4th column (index 3)
 
         science_marks.append(science_score)
 
@@ -276,29 +316,78 @@ print("Average Science Marks:", round(science_average, 2))
 print("Highest Science Mark:", max(science_marks))
 print("Lowest Science Mark:", min(science_marks))
 
-# 19. Identify Students with Low Marks
+# 19. Identify students with low marks
 
 print("\n========== LOW MARK ALERT ==========")
 
-with open("student_records.csv", "r", newline="") as file:
+with open(csv_file, "r", newline="") as file:
 
     reader = csv.reader(file)
-
-    next(reader)  # Skip headings
+    next(reader)
 
     for row in reader:
 
-        name = row[0]
+        student_name = row[1]
+        student_id = row[0]
 
-        maths = int(row[1])
-        science = int(row[2])
-        english = int(row[3])
+        maths = int(row[2])
+        science = int(row[3])
+        english = int(row[4])
 
         if maths < 35 or science < 35 or english < 35:
+            print(f"{student_id} | {student_name} has scored below 35 in at least one subject.")
 
-            print(
-                name,
-                "| Maths:", maths,
-                "| Science:", science,
-                "| English:", english
-            )
+
+# 20. Search Student by ID or Name
+
+print("\n========== STUDENT SEARCH ==========")
+print("1. Search by Student ID")
+print("2. Search by Student Name")
+
+choice = input("Enter your choice (1 or 2): ").strip()
+
+if choice == "1":
+    search_value = input("Enter Student ID: ").strip()
+    search_column = 0
+
+elif choice == "2":
+    search_value = input("Enter Student Name: ").strip()
+    search_column = 1
+
+else:
+    search_value = ""
+    search_column = None
+    print("Invalid choice. Please select 1 or 2.")
+
+if search_column is not None:
+
+    if search_value == "":
+        print("Search value cannot be empty.")
+
+    else:
+        found = False
+
+        with open(csv_file, "r", newline="") as file:
+
+            reader = csv.reader(file)
+            next(reader)
+
+            for row in reader:
+
+                if row[search_column].lower() == search_value.lower():
+
+                    print("\nStudent Found!")
+                    print("Student ID:", row[0])
+                    print("Student Name:", row[1])
+                    print("Maths:", row[2])
+                    print("Science:", row[3])
+                    print("English:", row[4])
+                    print("Total:", row[5])
+                    print("Average:", row[6])
+                    print("Grade:", row[7])
+
+                    found = True
+                    break
+
+        if not found:
+            print("Student record not found.")
