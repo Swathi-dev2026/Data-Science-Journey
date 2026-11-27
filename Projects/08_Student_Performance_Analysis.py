@@ -387,7 +387,6 @@ if search_column is not None:
                     print("Grade:", row[7])
 
                     found = True
-                    break
 
         if not found:
             print("Student record not found.")
